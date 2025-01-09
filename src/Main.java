@@ -16,8 +16,13 @@ public class Main {
         addMoreElements(placesToVisit);
         System.out.println(placesToVisit);
 
-        removeElements(placesToVisit);
-        System.out.println(placesToVisit);
+//        removeElements(placesToVisit);
+//        System.out.println(placesToVisit);
+
+//        var firstTimeList = new LinkedList<String>(List.of("1","2","3","4","5"));
+
+
+        gettingElements(placesToVisit);
 
     }
 
@@ -65,5 +70,29 @@ public class Main {
         System.out.println(p4 + " was removed");
 
     }
+
+    private static void gettingElements(LinkedList<String> list) {
+
+        System.out.println("Retrieved Element = " + list.get(4));
+
+        System.out.println("First Elemnent = " + list.getFirst());
+        System.out.println("Last Elemnent = " + list.getLast());
+
+        // The big O notation for these methods is the same as it is for an ArrayList
+        // O(n)
+        System.out.println("Darwin is at position: " + list.indexOf("Darwin"));
+        System.out.println("Melbourne is at positon: " + list.indexOf("Melbourne"));
+
+        // Queue retrieval method
+        System.out.println("Element from element() = " + list.element());
+        // Stack Retrieval methods
+        System.out.println("Element from peek() = " + list.peek());
+        System.out.println("Element from peekFirst() = " + list.peekFirst());
+        System.out.println("Element from peekLast() = " + list.peekLast());
+
+
+
+    }
+
 
 }
