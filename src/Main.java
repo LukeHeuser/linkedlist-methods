@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -21,8 +22,10 @@ public class Main {
 
 //        var firstTimeList = new LinkedList<String>(List.of("1","2","3","4","5"));
 
+//        gettingElements(placesToVisit);
 
-        gettingElements(placesToVisit);
+        printItinerary3(placesToVisit);
+
 
     }
 
@@ -90,7 +93,44 @@ public class Main {
         System.out.println("Element from peekFirst() = " + list.peekFirst());
         System.out.println("Element from peekLast() = " + list.peekLast());
 
+    }
 
+    public static void printItinerary(LinkedList<String> list) {
+
+        System.out.println("Trip starts at " + list.getFirst());
+        for(int i = 1; i < list.size(); i++) {
+            System.out.println("--> From: " + list.get(i - 1) + " to " + list.get(i));
+        }
+
+        System.out.println("Trip ends at " + list.getLast());
+
+    }
+
+    public static void printItinerary2(LinkedList<String> list) {
+
+        System.out.println("Trip starts at " + list.getFirst());
+        String previousTown = list.getFirst();
+        for(String town : list) {
+            System.out.println("--> From: " + previousTown + " to " + town);
+            previousTown = town;
+        }
+
+        System.out.println("Trip ends at " + list.getLast());
+
+    }
+
+    public static void printItinerary3(LinkedList<String> list) {
+
+        System.out.println("Trip starts at " + list.getFirst());
+        String previousTown = list.getFirst();
+        ListIterator<String> iterator = list.listIterator(1);
+        while (iterator.hasNext()) {
+            var town = iterator.next();
+            System.out.println("--> From: " + previousTown + " to " + town);
+            previousTown = town;
+        }
+
+        System.out.println("Trip ends at " + list.getLast());
 
     }
 
