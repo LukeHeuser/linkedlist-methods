@@ -138,6 +138,7 @@ public class Main {
 
     private static void testIterator(LinkedList<String> list) {
 
+
         var iterator = list.listIterator();
 
         while(iterator.hasNext()) {
