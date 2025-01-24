@@ -64,7 +64,6 @@ public class Main {
         String p3 = list.pollLast(); // removes last element
         System.out.println(p3 + " was removed");
 
-
         // push elements down into the 'pile' or back into the stack
         list.push("Sydney");
         list.push("Brisbane");
